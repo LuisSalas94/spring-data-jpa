@@ -103,4 +103,12 @@ class ProductRepositoryTest {
         productRepository.delete(product);
     }
 
+    @Test
+    void deleteAllMethod() {
+        //productRepository.deleteAll();
+        Product product1 = productRepository.findById(5L).get();
+        Product product2 = productRepository.findById(6L).get();
+        productRepository.deleteAll(List.of(product1, product2));
+    }
+
 }
