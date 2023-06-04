@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -54,6 +55,28 @@ class ProductRepositoryTest {
         System.out.println("Dedscription: " + product.getDescription());
     }
 
+    @Test
+    void saveAllMethod() {
+        // create a product
+        Product product2 = new Product();
+        product2.setName("product 2");
+        product2.setDescription("product 2 description");
+        product2.setSku("200ABC");
+        product2.setPrice(new BigDecimal(200));
+        product2.setActive(true);
+        product2.setImageUrl("product2.png");
 
+        // create a product
+        Product product3 = new Product();
+        product3.setName("product 3");
+        product3.setDescription("product 3 description");
+        product3.setSku("300ABC");
+        product3.setPrice(new BigDecimal(300));
+        product3.setActive(true);
+        product3.setImageUrl("product3.png");
+
+        productRepository.saveAll(List.of(product2, product3));
+
+    }
 
 }
