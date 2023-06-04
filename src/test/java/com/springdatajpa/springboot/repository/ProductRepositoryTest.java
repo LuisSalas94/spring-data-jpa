@@ -117,4 +117,11 @@ class ProductRepositoryTest {
         System.out.println("The number of items is: " + count);
     }
 
+    @Test
+    void existsByIdMethod() {
+        Long id = 7L;
+        boolean result = productRepository.existsById(id);
+        System.out.println("Product with id " + id + "exist?" + result);
+    }
+
 }
