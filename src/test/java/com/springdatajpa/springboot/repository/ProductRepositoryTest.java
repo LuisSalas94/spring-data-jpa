@@ -76,7 +76,16 @@ class ProductRepositoryTest {
         product3.setImageUrl("product3.png");
 
         productRepository.saveAll(List.of(product2, product3));
+    }
 
+    @Test
+    void findAllMethod() {
+        List<Product> productList = productRepository.findAll();
+        for(Product product:productList) {
+            System.out.println("Name: " + product.getName());
+            System.out.println("Description: " + product.getDescription());
+            System.out.println("******************************************");
+        }
     }
 
 }
