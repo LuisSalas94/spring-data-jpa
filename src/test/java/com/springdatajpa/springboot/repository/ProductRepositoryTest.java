@@ -94,4 +94,13 @@ class ProductRepositoryTest {
         productRepository.deleteById(id);
     }
 
+    @Test
+    void deleteMethod() {
+        // Find an entity my id
+        Long id = 2L;
+        Product product = productRepository.findById(id).get();
+        // delete(entity)
+        productRepository.delete(product);
+    }
+
 }
