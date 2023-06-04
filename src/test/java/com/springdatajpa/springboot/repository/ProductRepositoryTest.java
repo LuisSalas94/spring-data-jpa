@@ -88,4 +88,10 @@ class ProductRepositoryTest {
         }
     }
 
+    @Test
+    void deleteByIdMethod() {
+        Long id = 1L;
+        productRepository.deleteById(id);
+    }
+
 }
