@@ -46,6 +46,14 @@ class ProductRepositoryTest {
         productRepository.save(product);
     }
 
+    @Test
+    void findByIdMethod() {
+        Long id = 1L;
+        Product product = productRepository.findById(id).get();
+        System.out.println("Name: " + product.getName());
+        System.out.println("Dedscription: " + product.getDescription());
+    }
+
 
 
 }
