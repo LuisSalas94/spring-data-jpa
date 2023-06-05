@@ -81,4 +81,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     * @return
     * */
     List<Product> findByNameIn(List<String> names);
+
+    List<Product> findFirst2ByOrderByNameAsc();
+
+    List<Product> findTop2ByOrderByPriceDesc();
 }

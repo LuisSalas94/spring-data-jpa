@@ -125,4 +125,24 @@ public class QueryMethodTest {
         }
     }
 
+    @Test
+    void findFirs2tByOrderByNameAscMethod() {
+        List<Product> productList = productRepository.findFirst2ByOrderByNameAsc();
+        for(Product product: productList) {
+            System.out.println("Name: " + product.getName());
+            System.out.println("Description: " + product.getDescription());
+            System.out.println("*************************************");
+        }
+    }
+
+    @Test
+    void findTop2ByOrderByPriceDescMethod() {
+        List<Product> productList = productRepository.findTop2ByOrderByPriceDesc();
+        for(Product product: productList) {
+            System.out.println("Name: " + product.getName());
+            System.out.println("Price: " + product.getPrice());
+            System.out.println("*************************************");
+        }
+    }
+
 }
