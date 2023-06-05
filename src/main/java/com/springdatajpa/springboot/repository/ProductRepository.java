@@ -3,6 +3,7 @@ package com.springdatajpa.springboot.repository;
 import com.springdatajpa.springboot.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,5 +38,12 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     * If no product entry is found, this method returns null.
     * */
     Product findDistinctByName(String name);
+
+    /*
+    * Return the products whose price is greater than given price as method parameter
+    * @param price
+    * @return
+    * */
+    List<Product> findByPriceGreaterThan(BigDecimal price);
 
 }

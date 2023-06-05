@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -59,6 +60,17 @@ public class QueryMethodTest {
         System.out.println("Id: " + product.getId());
         System.out.println("Name: " + product.getName());
         System.out.println("Description: " + product.getDescription());
+    }
+
+    @Test
+    void findByPriceGreaterThanMethod() {
+        List<Product> productList = productRepository.findByPriceGreaterThan(new BigDecimal(100));
+        for(Product product: productList) {
+            System.out.println("Name: " + product.getName());
+            System.out.println("Description: " + product.getDescription());
+            System.out.println("Price: " + product.getPrice());
+            System.out.println("*************************************");
+        }
     }
 
 }
