@@ -3,6 +3,7 @@ package com.springdatajpa.springboot.repository;
 import com.springdatajpa.springboot.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
@@ -18,4 +19,16 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     * criteria. If no product entry is found, this method returns an empty Optional
     * */
     Optional<Product> findById(Long id);
+
+    /*
+    * Returns the found list of product entries whose title or description is given as
+    * method parameter. If no product entries is found, this method returns an empty list.
+    * */
+    List<Product> findByNameOrDescription(String name, String description);
+
+    /*
+     * Returns the found list of product entries whose title and description is given as
+     * method parameter. If no product entries is found, this method returns an empty list.
+     * */
+    List<Product> findByNameAndDescription(String name, String description);
 }
