@@ -84,5 +84,15 @@ public class QueryMethodTest {
         }
     }
 
+    @Test
+    void findByNameContaining() {
+        List<Product> productList = productRepository.findByNameContaining("product");
+        for(Product product: productList) {
+            System.out.println("Name: " + product.getName());
+            System.out.println("Description: " + product.getDescription());
+            System.out.println("*************************************");
+        }
+    }
+
 
 }
