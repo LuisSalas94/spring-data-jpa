@@ -73,4 +73,16 @@ public class QueryMethodTest {
         }
     }
 
+    @Test
+    void findByPriceLessThan() {
+        List<Product> productList = productRepository.findByPriceLessThan(new BigDecimal(300));
+        for(Product product: productList) {
+            System.out.println("Name: " + product.getName());
+            System.out.println("Description: " + product.getDescription());
+            System.out.println("Price: " + product.getPrice());
+            System.out.println("*************************************");
+        }
+    }
+
+
 }
