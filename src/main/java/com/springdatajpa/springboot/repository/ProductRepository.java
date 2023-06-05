@@ -75,4 +75,10 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
      * */
     List<Product> findByPriceBetween(BigDecimal startPrice, BigDecimal endPrice);
 
+    /*
+    * Returns list of products based on multiple values in
+    * @param names
+    * @return
+    * */
+    List<Product> findByNameIn(List<String> names);
 }
