@@ -31,4 +31,11 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
      * method parameter. If no product entries is found, this method returns an empty list.
      * */
     List<Product> findByNameAndDescription(String name, String description);
+
+    /*
+    * Return the distinct product entry whose name is given as a method parameter
+    * If no product entry is found, this method returns null.
+    * */
+    Product findDistinctByName(String name);
+
 }
